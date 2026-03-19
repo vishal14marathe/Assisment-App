@@ -1,0 +1,352 @@
+5-5-2025:Monday
+-lang = language as a English
+-! this is for short key to open elements of html.
+-Name and charset is attribute .
+-VW is viewport width.[px,em,%,rem]
+-Meta tag : keywords , separated by, author ,description paragraph.
+-This is inline elements:                         Block:
+-I= Italic                                        Div  
+-b= Bold                                          span
+-del= Delete                                      main  
+-em=empathises                                    nav
+-Strong
+-sub= subscript
+-sup= Super script
+
+
+-In image we have to add link of the img and with that we have to add style , width , height.
+
+6-5-2025:Tuesday
+img
+icon
+background image
+using <img src="" alt="image not shown">
+we can add multiple image name in same class 
+-Logo image:
+<link rel="icon" href="">
+in style we have to add body{ background image:url(link);
+ background repeat, background size}
+search w3 school on radial gradiant
+target attributeS: target="_self" ,"_blank", "_parent"
+css for a:link, hover, active, visited
+
+ordered list:
+<ol>,<li>
+unordered list:
+<ul>,<li>
+descriptive list:
+<dl>,<dt>,<dd>
+
+box-sizing=border-box;
+
+7-5-25:
+ide:
+Table:
+<thread></thread>
+<tr></tr>
+
+
+demodiv:
+overflow=auto;
+navbar:
+box-shadow
+
+
+
+
+
+
+15-5-25:
+Form:
+name, address, number, tel, file, email, password, radio, checkbox, submit, reset, button
+.formContainer{
+  width, height, margin, background, 
+for number we should add <pattern="">
+input type="file"/>
+
+CSS Selectors:-(imp question for interview)
+- simple selectors:
+descendent combinator(space)
+next combinators(+)
+child combinator(>)
+subsequent siblings combinator(~), this is called combinator selectors
+$ end with
+^ start with
+ with-
+
+
+
+
+
+Grid:
+
+grid-template-areas:'H H H '
+                    'nav nav nav nav'
+                     'asd mainC mainC advt'
+                     'foo foo foo foo';
+grid-area:advt;
+
+-Media Queries:
+
+
+-translate:(to understand transform and animations check out in w3 school)
+transform: translate(200px, 200px);
+                      X       Y
+transform: rotate(45deg);
+transform: rotate(180deg);
+
+-animation:
+animation-duration: 2s;
+animation-delay: 3s;
+animation-timing-function: linear;
+animation-iteration-infinite;
+-@keyframes b51{
+ from{
+      background:=-color: red; }
+to{
+     background-color:green;  }
+}
+
+
+_Airbnb:
+
+
+
+
+
+-js,bookstrap :
+1. alert
+2. console
+3. method of js to get element
+4.write()
+
+
+document.querySelector('div').textcontent = "Hello from query selector"
+<button onclick="showcontent()">show more</button>
+
+property innerHtml
+
+
+prompt()
+bootstrap 4,install
+
+bootstrap:
+padding: p
+margin: m
+left , right: l , r
+display: d , display-flex: d-flex
+img-fluid means to adjust width size in 100%
+bg-secondary is a color.
+Data Types:
+num
+strings
+float
+Boolean
+undefined
+object array, object, function
+null NOTHING
+symbol
+
+-navbar using bootstrap.
+data-bs-toggle ='#home'
+
+: dropdown
+- products
+blogs
+store locator
+franchise queries
+
+-loop:
+for loop
+while loop {increment/decrement }
+do while loop
+
+
+git config --global user.name 'prithviraj6633'
+git config --global user .email 'prithvirajchavan2003@gmail.com'
+
+git branch -M main
+git push -u origin main
+
+-function in JavaScript: It is a reusable
+function main(){
+ console.log()
+}
+
+main()
+
+
+=> arrow function:
+const greetArrow = ()=>{}
+greetArrow();
+
+
+
+
+
+
+stage 1: index.html --> form -(tname,tdescrip),submit button 
+                         table -tr->th
+
+create element:
+add element 
+element.classList.add()-adds class
+
+
+-Promises, async ,await:
+fetch('')
+.then((response)=>response.json())
+.then((data)=>console.log(data))
+.catch((error)=>console.log(error)
+
+
+URL:
+http://wisdomsprouts.in
+query
+dynamic
+
+TASK:
+weather application 
+
+
+REACT:
+const / let
+template strings
+closure / lexical scope define
+import/export
+array/ object destructing
+arrow functions
+immutability
+promises
+fetch API
+spread operator
+
+
+
+REACT definition:
+React is jacasvript library, which is used for single web application.
+react itslef is not a library. as it does not give you beautifully designed buttons or cards.
+-react versions is 19.0.0
+react is created by facebook and now it is of 'meta'.
+
+-real DOM vs Virtual Dom:
+Real: .index
+Virtual: javascript
+
+-first we have to install: npm install create-react-app
+npm create-react-app
+
+In react app we hav eto do changes in app.js and .css not in index and .js
+
+<button style={{'color':'red' .backgroundcolor':'black'}}>
+
+Theory:
+Event
+Cycle 
+import fruits from ../../data.js
+
+-Day6:keys & lists
+For rendering the objects like fruits by giving
+for every name will have id .
+syntax:
+<ul>
+ {fruits.map ()elemt,index)=>(
+                              
+                   <li keys={index} >{elemt}</li>
+</ul>
+
+access by fruit.id which is an object.id
+
+{fruit.quantity > 0 ? (<p>In stock</p>) : (<p>Out Of stock</p>)}
+
+
+-Day8:lifting state up in react:-
+discount and discounted price
+interview question is stateliftUp
+
+
+-Contact From:29-july 
+make this using react.
+
+
+-Day15:useEffect Hook with Bootstrap means to handle side effect.
+useEffect(()=> {
+fetchdata()
+
+},[])
+
+update is go when is going then only it goes in dependences.
+
+the return inside useEffect is the Cleanup function.
+
+-bootstrap react install in fetch-data code.
+
+
+
+Module name is Axios documentation.
+
+
+-Axios Documentation:
+create products-dashboard
+
+-Day 11- React router Dom:
+1.Installation 
+
+- BrowserRouter
+- Routes
+-nestedRouter
+
+-Mini Blog Project:-
+tech stack:- react,react router dom, bootstrap, react toastify, custom hook, localstorage.
+
+
+-React To-do Application Assignment
+-hooks in react.
+	
+.Completion:
+1-To do application: about, few modification on look, look of cards
+2-Ecommerce app:
+3-Blog Website:
+4-Clone of zepto/blinkit: Dashboard , navbar, Footer
+
+5-Portfolio: [Complete it by tomorrow or they after tomorrow.]
+6-travel website
+7-Quiz Application
+8-Calender CRUD note: Not done.
+
+
+-Cart useReducer
+
+ initialState = {
+    cart:[{},{},{}],   [this is use to add cart.]
+totalPrice:0
+}
+
+cartOBJ = {}
+
+reducer addToCart(){},
+
+ removeFromCart(){}
+
+emptyCart(){}
+
+useContext
+ryhetg-rf9p;etgrwl'fdbg-fsvjmyukytyjethruk--yukoprty-erfbgfnhhj;,jmg-fdbg
+Save state to LocalStorage
+
+
+
+
+-agentic ai 
+TASKS:
+read more 
+delete
+refresh
+again show the list
+
+
+
+
+
+
+
