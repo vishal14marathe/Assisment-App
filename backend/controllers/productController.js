@@ -1,16 +1,11 @@
 const Product = require("../models/Product");
 
-// @desc    Get all products
-// @route   GET /api/products
-// @access  Private
 const getProducts = async (req, res) => {
   try {
     const { page = 1, limit = 10, search, category } = req.query;
 
-    // Build query
     let query = {};
 
-    // Search by name or description
     if (search) {
       query.$or = [
         { name: { $regex: search, $options: "i" } },
@@ -18,24 +13,20 @@ const getProducts = async (req, res) => {
       ];
     }
 
-    // Filter by category
     if (category) {
       query.category = category;
     }
 
-    // Pagination
     const pageNum = parseInt(page);
     const limitNum = parseInt(limit);
     const skip = (pageNum - 1) * limitNum;
 
-    // Execute query
     const products = await Product.find(query)
       .populate("createdBy", "name email")
       .sort("-createdAt")
       .skip(skip)
       .limit(limitNum);
 
-    // Get total count
     const total = await Product.countDocuments(query);
 
     res.json({
@@ -54,9 +45,6 @@ const getProducts = async (req, res) => {
   }
 };
 
-// @desc    Get single product
-// @route   GET /api/products/:id
-// @access  Private
 const getProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id).populate(
@@ -78,9 +66,6 @@ const getProduct = async (req, res) => {
   }
 };
 
-// @desc    Create product
-// @route   POST /api/products
-// @access  Private
 const createProduct = async (req, res) => {
   try {
     req.body.createdBy = req.user.id;
@@ -97,9 +82,6 @@ const createProduct = async (req, res) => {
   }
 };
 
-// @desc    Update product
-// @route   PUT /api/products/:id
-// @access  Private
 const updateProduct = async (req, res) => {
   try {
     let product = await Product.findById(req.params.id);
@@ -108,7 +90,6 @@ const updateProduct = async (req, res) => {
       return res.status(404).json({ message: "Product not found" });
     }
 
-    // Check ownership (admin can update any product)
     if (
       product.createdBy.toString() !== req.user.id &&
       req.user.role !== "admin"
@@ -134,9 +115,6 @@ const updateProduct = async (req, res) => {
   }
 };
 
-// @desc    Delete product
-// @route   DELETE /api/products/:id
-// @access  Private
 const deleteProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -145,7 +123,6 @@ const deleteProduct = async (req, res) => {
       return res.status(404).json({ message: "Product not found" });
     }
 
-    // Check ownership (admin can delete any product)
     if (
       product.createdBy.toString() !== req.user.id &&
       req.user.role !== "admin"
